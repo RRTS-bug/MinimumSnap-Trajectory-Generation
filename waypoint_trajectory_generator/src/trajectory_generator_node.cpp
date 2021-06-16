@@ -18,7 +18,7 @@
 // Useful customized headers
 #include "trajectory_generator_waypoint.h"
 
-using namespace std;
+using namespace std;    //用于访问名称空间std Eigen
 using namespace Eigen;
 
 // Param from launch file
@@ -32,11 +32,11 @@ ros::Publisher _wp_traj_vis_pub, _wp_path_vis_pub;
 
 // for planning
 int _poly_num1D;
-MatrixXd _polyCoeff;
-VectorXd _polyTime;
+MatrixXd _polyCoeff; // 动态矩阵，double类型，没有初始化
+VectorXd _polyTime;  // 动态向量，double类型，没有初始化
 Vector3d _startPos  = Vector3d::Zero();
-Vector3d _startVel  = Vector3d::Zero();
-Vector3d _startAcc  = Vector3d::Zero();
+Vector3d _startVel  = Vector3d::Zero();//x,y,z三个方向速度
+Vector3d _startAcc  = Vector3d::Zero();//x,y,z三个方向加速度
 Vector3d _endVel    = Vector3d::Zero();
 Vector3d _endAcc    = Vector3d::Zero();
 
